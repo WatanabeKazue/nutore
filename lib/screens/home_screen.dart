@@ -15,8 +15,10 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Column(
             children: <Widget>[
               Image.asset("assets/images/image_title.png"),
+              SizedBox(height: 16.0,),
               Text("問題数を選択して「スタート」ボタンを押してください"),
               //TODO プルダウン選択肢
+              DropdownButton(items: null,),
               Expanded(
                   child: Container(
                     alignment: Alignment.bottomCenter,
