@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -20,9 +21,16 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Container(
                     alignment: Alignment.bottomCenter,
                     padding: EdgeInsets.only(bottom: 16.0),
-                    child: RaisedButton(
+                    child: ElevatedButton.icon(
                       child: Text("スタート"),
-                      onPressed: nulle,
+                      onPressed: () => print("おしたで～"),
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.purpleAccent,
+                        onPrimary: Colors.black,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(20.0),),
+                        )
+                      )
               ),
                   ))
             ],
