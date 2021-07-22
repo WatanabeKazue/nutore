@@ -7,14 +7,25 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+
+  List<DropdownMenuItem<int>> _menuItems = [];
+  int _numberOfQuestions = 0;
+
   @override
+  void initState() {
+    super.initState();
+    setMenuItems();
+  }
 
+  void setMenuItems() {
+    _menuItems.add(DropdownMenuItem(value: 10, child: Text("10"),));
+    _menuItems.add(DropdownMenuItem(value: 20, child: Text("20"),));
+    _menuItems.add(DropdownMenuItem(value: 30, child: Text("30"),));
 
-
-
-
-
-
+    _menuItems = [DropdownMenuItem(value: 10, child: Text("10"),),
+      (DropdownMenuItem(value: 20, child: Text("20")))
+    (DropdownMenuItem(value: 30, child: Text("30"),))];
+  }
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,25 +39,27 @@ class _HomeScreenState extends State<HomeScreen> {
               //TODO プルダウン選択肢
               SizedBox(height: 50.0,),
               DropdownButton(items: [
-                DropdownMenuItem(child: ),
-                DropdownMenuItem(child:),
-                DropdownMenuItem(child:),
+                DropdownMenuItem(child: Container()),
+                DropdownMenuItem(child: Container()),
+                DropdownMenuItem(child: Container()),
               ],),
               Expanded(
                   child: Container(
                     alignment: Alignment.bottomCenter,
                     padding: EdgeInsets.only(bottom: 16.0),
                     child: ElevatedButton.icon(
-                      child: Text("スタート"),
-                      onPressed: () => print("おしたで～"),
-                      style: ElevatedButton.styleFrom(
-                        primary: Colors.purpleAccent,
-                        onPrimary: Colors.black,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(20.0),),
+                        icon: Icon(Icons.ac_unit), // TODO あとで書き換え
+                        label: Text("スタート"),
+                        onPressed: () => print("おしたで～"),
+                        style: ElevatedButton.styleFrom(
+                            primary: Colors.purpleAccent,
+                            onPrimary: Colors.black,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.all(Radius.circular(
+                                  20.0),),
+                            )
                         )
-                      )
-              ),
+                    ),
                   ))
             ],
           ),
@@ -54,4 +67,6 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
+
+
 }
