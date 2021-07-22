@@ -8,6 +8,14 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
+
+
+
+
+
+
+
+
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
@@ -20,7 +28,9 @@ class _HomeScreenState extends State<HomeScreen> {
               //TODO プルダウン選択肢
               SizedBox(height: 50.0,),
               DropdownButton(items: [
-                DropdownMenuItem(child: child)
+                DropdownMenuItem(child: ),
+                DropdownMenuItem(child:),
+                DropdownMenuItem(child:),
               ],),
               Expanded(
                   child: Container(
