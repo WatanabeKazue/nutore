@@ -18,7 +18,10 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(height: 16.0,),
               Text("問題数を選択して「スタート」ボタンを押してください"),
               //TODO プルダウン選択肢
-              DropdownButton(items: null,),
+              SizedBox(height: 50.0,),
+              DropdownButton(items: [
+                DropdownMenuItem(child: child)
+              ],),
               Expanded(
                   child: Container(
                     alignment: Alignment.bottomCenter,
