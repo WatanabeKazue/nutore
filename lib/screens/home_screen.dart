@@ -15,6 +15,8 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     super.initState();
     setMenuItems();
+
+    _numberOfQuestions = _menuItems[0].value;
   }
 
   void setMenuItems() {
@@ -22,9 +24,9 @@ class _HomeScreenState extends State<HomeScreen> {
     _menuItems.add(DropdownMenuItem(value: 20, child: Text("20"),));
     _menuItems.add(DropdownMenuItem(value: 30, child: Text("30"),));
 
-    _menuItems = [DropdownMenuItem(value: 10, child: Text("10"),),
-      (DropdownMenuItem(value: 20, child: Text("20")))
-    (DropdownMenuItem(value: 30, child: Text("30"),))];
+    _menuItems = add(DropdownMenuItem(value: 10, child: Text(10.toString()),))
+       ..add(DropdownMenuItem(value: 10, child: Text(10.toString()),))
+        ..add(DropdownMenuItem(value: 10, child: Text(10.toString()),));
   }
 
   Widget build(BuildContext context) {
@@ -38,7 +40,15 @@ class _HomeScreenState extends State<HomeScreen> {
               Text("問題数を選択して「スタート」ボタンを押してください"),
               //TODO プルダウン選択肢
               SizedBox(height: 50.0,),
-              DropdownButton(items: [
+              DropdownButton(items: _menuItems,
+               value: _numberOfQuestions ,
+              onChanged: (value) => print(value.toString()),
+              setState(() {
+                _numberOfQuestions = selectedValue;
+              });
+              } ,
+              ),
+              [
                 DropdownMenuItem(child: Container()),
                 DropdownMenuItem(child: Container()),
                 DropdownMenuItem(child: Container()),
@@ -67,6 +77,6 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
-
+//TODO 140
 
 }
